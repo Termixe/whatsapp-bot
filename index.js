@@ -160,9 +160,10 @@ async function sendWhatsAppMessage(to, text) {
         text: { body: text },
       },
       {
-        headers: {
-          Authorization: `Bearer ${process.env.META_ACCESS_TOKEN}`,
-        },
+       headers: {
+  "x-api-key": process.env.WATI_API_TOKEN,
+  "Content-Type": "application/json"
+},
       }
     );
   }
